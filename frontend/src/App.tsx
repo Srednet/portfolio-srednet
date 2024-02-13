@@ -1,13 +1,21 @@
 import './App.css'
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./pages/Home.tsx";
+import Header from "./components/Header.tsx";
+import Footer from "./components/Footer.tsx";
 
 function App() {
 
   return (
-    <>
-        <h1 className="text-3xl font-bold underline">
-            Hello world!
-        </h1>
-    </>
+      <>
+          <Header />
+          <BrowserRouter>
+              <Routes>
+                  <Route path="accueil" element={<Home />} />
+              </Routes>
+          </BrowserRouter>
+          <Footer />
+      </>
   )
 }
 
